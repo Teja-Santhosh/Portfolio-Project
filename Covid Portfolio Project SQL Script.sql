@@ -128,8 +128,8 @@ from PortfolioProject..CovidDeaths as dea
 join PortfolioProject..CovidVaccinations as vac
     on dea.location = vac.location
     and dea.date = vac.date
-where dea.continent is not null
-order by 2,3
+--where dea.continent is not null
+--order by 2,3
 
 select *, (rolling_people_vaccinated/population)*100 as vaccination_rate
 from #Percent_Population_Vaccinated
@@ -147,7 +147,5 @@ join PortfolioProject..CovidVaccinations as vac
     on dea.location = vac.location
     and dea.date = vac.date
 where dea.continent is not null
---order by 2,3
 
-select *
-from Percent_Population_Vaccinated
+
