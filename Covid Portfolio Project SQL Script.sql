@@ -1,6 +1,6 @@
 /*
 
-Covid 19 Data Exploration 
+Covid-19 Data Exploration with data from early 2020 to Dec-2022 using MS SQL
 
 Skills used: Joins, CTE's, Temp Tables, Windows Functions, Aggregate Functions, Creating Views, Converting Data Types
 
