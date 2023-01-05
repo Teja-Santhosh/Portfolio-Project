@@ -153,19 +153,18 @@ SET SoldAsVacant =  CASE When SoldAsVacant = 'Y' then 'Yes'
 
 WITH row_numCTE as (
 SELECT *,
-	ROW_NUMBER() OVER(
-	PARTITION BY ParcelID,
-				 PropertyAddress,
-				 SalePrice,
-				 SaleDate,
-				 LegalReference
-				 Order by
-					UniqueID
-					) as row_num
-
+ROW_NUMBER() OVER(
+PARTITION BY ParcelID,
+PropertyAddress,
+SalePrice,
+SaleDate,
+LegalReference
+Order by
+	UniqueID
+	) as row_num
 from PortfolioProject..NashvilleHousing
 )
-select *
+DELETE
 from row_numCTE
 where row_num > 1
 
